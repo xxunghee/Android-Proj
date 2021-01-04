@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyWidget</string>
+    <string name="myname">마이크 나의 이름은 마이크, 나의 이름은 마이크, 나의 이름은 마이크</string>
+    <string name="btn_name">확인</string>
+</resources>
