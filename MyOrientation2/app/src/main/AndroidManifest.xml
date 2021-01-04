@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.orientation2">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyOrientation2">
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <!-- android:screenOrientation="landscape"> -->
+        <!-- configChanges: 방향 바뀌면 알려주는 것 | 화면 크기 바뀌면 알려주는 것 | 키패드 자동 생성(?) 방지 -->
+        <!-- screenOrientation: 방향 바뀌어도 화면 회전 안 되게 고정 (landscape, portrait ..) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
