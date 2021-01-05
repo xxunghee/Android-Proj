@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D2D2"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/show1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="첫번째 이미지"
+        app:backgroundTint="#F6BCBC" />
+
+    <Button
+        android:id="@+id/show2_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="두번째 이미지"
+        app:backgroundTint="#F3D7A2" />
+
+    <Button
+        android:id="@+id/show3_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="세번째 이미지"
+        app:backgroundTint="#A1EDD2" />
+</LinearLayout>
