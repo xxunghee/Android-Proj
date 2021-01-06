@@ -1,4 +1,0 @@
-com/example/lifecycle/BuildConfig.java
- com.example.lifecycle.BuildConfig
-com/example/lifecycle/MainActivity.java
- com.example.lifecycle.MainActivity

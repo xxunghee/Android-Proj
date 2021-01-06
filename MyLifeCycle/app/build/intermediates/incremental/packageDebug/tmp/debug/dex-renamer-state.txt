@@ -1,4 +1,0 @@
-#Tue Jan 05 16:21:45 KST 2021
-base.0=C\:\\Users\\xxung\\Documents\\GitHub\\AndroidBasic\\MyLifeCycle\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
