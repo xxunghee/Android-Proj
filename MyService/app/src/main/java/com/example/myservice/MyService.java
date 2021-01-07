@@ -8,9 +8,7 @@ import android.util.Log;
 public class MyService extends Service {
     private static final String TAG = "MyService";
 
-    public MyService() {
-
-    }
+    public MyService() { }
 
     @Override
     public void onCreate() {
@@ -18,7 +16,7 @@ public class MyService extends Service {
         Log.d(TAG, "onCreate 호출");
     }
 
-    // StartService는 사실 데이터 전달 목적이고.. Intent 안에 넣어서 데이터 전달하면 onStartCommand 호출하고.. 어떤 동작인지 구분
+    // StartService는 사실 데이터 전달 목적이고.. Intent 안에 넣어서 데이터 전달하면 onStartCommand 호출하고..  flags로 어떤 동작인지 구분
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "onStartCommand 호출");
