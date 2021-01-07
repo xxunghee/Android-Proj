@@ -1,0 +1,4 @@
+com/example/myrelativelayout/MainActivity.java
+ com.example.myrelativelayout.MainActivity
+com/example/myrelativelayout/BuildConfig.java
+ com.example.myrelativelayout.BuildConfig
