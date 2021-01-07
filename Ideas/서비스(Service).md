@@ -78,6 +78,8 @@
    
 
 - 서비스 생명 주기
+
+  <img src="https://user-images.githubusercontent.com/50495214/103865960-51450c80-5108-11eb-8a78-89dcbb455ca4.png">
   - 시작된 서비스
     - ```startService()``` -> ```onCreate()``` -> ```onStartCommand()``` -> Running -> ```stopSelf()``` | ```stopService()``` -> ```onDestroy()```
   - 바인딩된 서비스
