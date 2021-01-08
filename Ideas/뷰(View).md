@@ -13,14 +13,14 @@
   
 
   <center>
-      <img src="https://user-images.githubusercontent.com/50495214/103965024-28705600-51a0-11eb-8304-b4f2734dd648.png" height="300" >
+      <img src="https://user-images.githubusercontent.com/50495214/103965024-28705600-51a0-11eb-8304-b4f2734dd648.png" height="350" >
   </center>
 
   
 
   
 
-  <center> <img src="https://user-images.githubusercontent.com/50495214/103965218-974daf00-51a0-11eb-87f5-732cfd95b27d.png" height="150"> </center>
+  <center> <img src="https://user-images.githubusercontent.com/50495214/103965218-974daf00-51a0-11eb-87f5-732cfd95b27d.png" height="200"> </center>
 
   - Box: View가 차지하는 크기
   - Border: View의 테두리
@@ -71,15 +71,15 @@
 
       i) vertial (수직 배치)
 
-      <center><img src="https://user-images.githubusercontent.com/50495214/103966268-e5fc4880-51a2-11eb-80de-0517bb4379be.PNG" width="400"> </center>
+      <center><img src="https://user-images.githubusercontent.com/50495214/103966268-e5fc4880-51a2-11eb-80de-0517bb4379be.PNG" width="450"> </center>
 
       *보라색 버튼의 옆 공간은 다른 구성 요소가 위치할 수 없는 버려진 공간
 
       ii) horizontal (수평배치)
 
       <center>
-          <img src="https://user-images.githubusercontent.com/50495214/103966249-d8df5980-51a2-11eb-81f1-0312d28462ac.PNG" width="350">
-          <img src="https://user-images.githubusercontent.com/50495214/103966252-d977f000-51a2-11eb-995a-28066f77af7e.PNG" width="350">
+          <img src="https://user-images.githubusercontent.com/50495214/103966249-d8df5980-51a2-11eb-81f1-0312d28462ac.PNG" width="450">
+          <img src="https://user-images.githubusercontent.com/50495214/103966252-d977f000-51a2-11eb-995a-28066f77af7e.PNG" width="450">
       </center>
 
       *보라색 버튼의 너비 속성을 match_parent로 설정한 경우, 다른 두 버튼이 가려짐
