@@ -113,10 +113,6 @@
             </center>
   
       
-  
-    - <center>
-        <img src="https://user-images.githubusercontent.com/50495214/103967144-b5b5a980-51a4-11eb-899d-7cf438834200.PNG" width="400">
-      </center>
       
       *노란 별 이미지(imageView3)과 회색 별 이미지(imageView4)를 넣었을 때 회색 별 이미지만 보임
   
