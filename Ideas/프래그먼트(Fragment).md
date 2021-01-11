@@ -9,7 +9,7 @@
   - Activity 위에서 동작하기 때문에 Activity의 수명 주기에 직접적인 영향을 받음
     Activity가 실행 중인 동안은 개별적으로 조작 가능
 
-- ㅇ
+  
 
 - 구현
 
@@ -93,21 +93,64 @@
      MainActivity.java의 `onCreate()`에 Fragment 추가
 
      ```java
+     MainFragment mainFragment;
+     MenuFragment menuFragment;
+     
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_main);
      
          mainFragment = (MainFragment)getSupportFragmentManager().findFragmentById(R.id.mainFragment);
+         menuFragment = (MenuFragment)getSupportFragmentManager().findFragmentById(R.id.menuFragment);
      }
+     
      public void onFragmentChanged(int index) {
-         if(index == 0) {
+         if(index == 0) { // 전달 받은 index가 0인 경우 mainFragment 띄우기
              getSupportFragmentManager().beginTransaction().replace(R.id.container, mainFragment).commit();
          }
-         else if(index == 1) {
+    else if(index == 1) { // 전달 받은 index가 1인경우 menuFragment 띄우기
              getSupportFragmentManager().beginTransaction().replace(R.id.container, menuFragment).commit();
          }
      }
      ```
-
      
+     
+
+- 생명 주기
+
+  - Activity 위에서 실행되기 때문에 Activity의 생명 주기에 영향 받음
+
+    ex. Activity 일시정지 => Fragment 일시정지, Activity 소멸 =>  Fragment 소멸
+
+  - Activity가 실행 중인 동안에만 삭제, 추가 등의 동작 가능
+
+    
+
+    <center>
+        <img src="https://user-images.githubusercontent.com/50495214/104140842-dc6b1e80-53f6-11eb-9419-a7abc4daafa0.png" width="300">
+        <img src="https://user-images.githubusercontent.com/50495214/104141536-a29c1700-53fa-11eb-87cb-ba5e85ebd9a8.png" width="300">
+    </center>
+
+    
+
+  - ```onAttach()``` : Fragment와 Activity가 연결된 경우 호출되는 함수로, Activity 전달됨
+
+  - ```onCreateView()``` : Fragment와 연결된 View 계층을 생성할 때 호출되는 함수
+
+  - ```onActivityCreated()``` : Activity의 ```onCreate()``` 메소드가 반환할 때 호출되는 함수
+
+  - ```onDestroyView()``` : Fragment와 연결된 View 계층이 제거되는 중일 때 호출되는 함수
+
+  - ```onDetach()``` : Fragment와 Activity 간 연결이 끊어지는 중일 때 호출되는 함수
+
+
+
+- Activity vs Fragment
+
+  | <center> </center> | <center>Activity</center>                                    |                  <center>Fragment</center>                   |
+  | :----------------: | ------------------------------------------------------------ | :----------------------------------------------------------: |
+  |   **UI&UX 구성**   | <center>제한적 </center>                                     |                 <center> 자유로움 </center>                  |
+  |    **재사용성**    | <center>재사용 불가능 </center>                              |                <center>재사용 가능 </center>                 |
+  |    **퍼포먼스**    | <center>무겁다</center><br />액티비티를 액티비티 스택에 쌓는 방식으로 동작 | <center>가볍다</center> <br /> Activity 내에서 상대적으로 가볍게 추가/제거 가능 <br />프래그먼트 백스택에서 프래그먼트를 관리하는 것이 메모리 측면에서 효율적 |
+  |  **데이터 공유**   | <center>Intent 사용</center>                                 |       <center>Activity 내에서 자유롭게 가능 </center>        |
