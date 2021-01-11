@@ -109,7 +109,7 @@
          if(index == 0) { // 전달 받은 index가 0인 경우 mainFragment 띄우기
              getSupportFragmentManager().beginTransaction().replace(R.id.container, mainFragment).commit();
          }
-    else if(index == 1) { // 전달 받은 index가 1인경우 menuFragment 띄우기
+         else if(index == 1) { // 전달 받은 index가 1인경우 menuFragment 띄우기
              getSupportFragmentManager().beginTransaction().replace(R.id.container, menuFragment).commit();
          }
      }
@@ -152,5 +152,5 @@
   | :----------------: | ------------------------------------------------------------ | :----------------------------------------------------------: |
   |   **UI&UX 구성**   | <center>제한적 </center>                                     |                 <center> 자유로움 </center>                  |
   |    **재사용성**    | <center>재사용 불가능 </center>                              |                <center>재사용 가능 </center>                 |
-  |    **퍼포먼스**    | <center>무겁다</center><br />액티비티를 액티비티 스택에 쌓는 방식으로 동작 | <center>가볍다</center> <br /> Activity 내에서 상대적으로 가볍게 추가/제거 가능 <br />프래그먼트 백스택에서 프래그먼트를 관리하는 것이 메모리 측면에서 효율적 |
+  |    **퍼포먼스**    | <center>무겁다 <br />액티비티를 액티비티 스택에 쌓는 방식으로 동작 </center>| <center>가볍다 <br /> Activity 내에서 상대적으로 가볍게 추가/제거 가능 <br />프래그먼트 백스택에서 프래그먼트를 관리하는 것이 메모리 측면에서 효율적 </center>|
   |  **데이터 공유**   | <center>Intent 사용</center>                                 |       <center>Activity 내에서 자유롭게 가능 </center>        |
