@@ -26,14 +26,12 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
     static class ViewHolder extends RecyclerView.ViewHolder {
         ItemInfoBinding binding;
 
-        private TextView nameView;
-        private TextView ageView;
-
         ViewHolder(ItemInfoBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
 
+        //++++ 데이터 넣는 함수 분리하여 구현
         public void bind(Info info) {
             binding.tvName.setText(info.getName());
             binding.tvAge.setText(info.getAge());
@@ -50,7 +48,7 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
         return new ViewHolder(binding);
     }
 
-    //---- 바인딩하여 데이터를 아이템 뷰에 표시
+    //++++ 데이터를 bind()에 전달
     @Override
     public void onBindViewHolder(@NonNull InfoAdapter.ViewHolder holder, int position) {
         Info info = data.get(position);
