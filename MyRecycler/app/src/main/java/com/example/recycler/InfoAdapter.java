@@ -1,6 +1,7 @@
 package com.example.recycler;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,7 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
     }
 
     //---- 아이템 뷰를 저장하고 화면에 보여주는 ViewHolder 클래스 생성
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ItemInfoBinding binding;
 
         ViewHolder(ItemInfoBinding binding) {
@@ -32,6 +33,12 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
         public void bind(Info info) {
             binding.tvName.setText(info.getName());
             binding.tvAge.setText(info.getAge());
+        }
+
+        @Override
+        public void onClick(View v) {
+            Info info = new Info("밥", 123);
+            bind(info);
         }
     }
 
