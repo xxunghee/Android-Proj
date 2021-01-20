@@ -107,7 +107,7 @@
 
        
 
-     - Database에서 가져오는 경우(`SpinnerAdapter` 사용)
+     - Database에서 가져오는 경우(`CursorAdapter` 사용)
 
        - 정리 예정.
 
