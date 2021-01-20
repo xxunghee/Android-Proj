@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="snack_array">
+        <item>선택하기</item>
+        <item>바나나킥</item>
+        <item>배배</item>
+        <item>눈을감자</item>
+        <item>고래밥</item>
+        <item>꼬북칩</item>
+    </string-array>
+</resources>

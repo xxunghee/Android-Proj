@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import com.example.spinner.databinding.ActivityMainBinding;
 
@@ -26,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
 
     //--- 과자 이미지
-    ArrayList<Integer> Imgs = new ArrayList<>(Arrays.asList(
-            new Integer[] {0, R.drawable.bananakick, R.drawable.baebae, R.drawable.nungam, R.drawable.goraebap, R.drawable.kkobuk}));
+    ArrayList<Integer> Imgs =
+            new ArrayList<>(Arrays.asList(new Integer[] {0, R.drawable.bananakick, R.drawable.baebae, R.drawable.nungam, R.drawable.goraebap, R.drawable.kkobuk}));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
         //--- Adapter 설정, snackList 인자로 전달
         arrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, snackList);
         binding.spinner.setAdapter(arrayAdapter);
+        
+//        XML 파일로 배열 생성한 경우
+//        //--- Adapter 설정, snack_array 인자로 전달
+//        arrayAdapter = ArrayAdapter.createFromResource(this, R.array.snack_array,
+//                android.R.layout.simple_spinner_item);
+//        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        binding.spinner.setAdapter(arrayAdapter);
 
         //--- Spinner에서 Item 선택 시
         binding.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
