@@ -14,6 +14,7 @@ public class ListViewAdapter extends BaseAdapter {
     private ArrayList<Niniz> ninizs = null;
     private Context context;
 
+    //--- 전달 받은 객체로 ninizs 초기화
     public ListViewAdapter(ArrayList<Niniz> nini) {
         this.ninizs = nini;
     }
@@ -24,8 +25,8 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
+    public Niniz getItem(int position) {
+        return ninizs.get(position);
     }
 
     @Override

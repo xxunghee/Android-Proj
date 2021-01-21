@@ -1,7 +1,7 @@
 package com.example.mylistview;
 
 public class Niniz {
-    public String name;
+    private String name;
     private int imgID;
 
     Niniz(String name, int imgID) {

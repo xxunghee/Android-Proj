@@ -12,8 +12,13 @@ import com.example.mylistview.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    //--- 데이터 바인딩
     ActivityMainBinding binding;
+
+    //--- 사용자 정의 자료형 Niniz(String name, ing ImgID)
     ArrayList<Niniz> ninizs;
+
+    //--- Custom Adapter
     ListViewAdapter adapter;
 
     @Override
@@ -21,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        ninizs = new ArrayList<>();ninizs.add(new Niniz("스카피", R.drawable.scappy));
+        //--- 데이터 입력
+        ninizs = new ArrayList<>();
+        ninizs.add(new Niniz("스카피", R.drawable.scappy));
         ninizs.add(new Niniz("죠르디", R.drawable.jordy));
         ninizs.add(new Niniz("앙몬드", R.drawable.angmond));
         ninizs.add(new Niniz("케로 & 베로니", R.drawable.keroandberony));
@@ -29,14 +36,20 @@ public class MainActivity extends AppCompatActivity {
         ninizs.add(new Niniz("팬다 주니어", R.drawable.penda));
         ninizs.add(new Niniz("빠냐", R.drawable.bbanya));
 
+        //--- Adapter 설정
         adapter = new ListViewAdapter(ninizs);
         binding.list.setAdapter(adapter);
 
+        //--- ListView의 캐릭터 클릭 시 상단에 선택된 캐릭터의 이미지와 이름 나타냄
         binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 binding.clickedImg.setImageResource(ninizs.get(position).getImg());
-                binding.clickedTv.setText(ninizs.get(position).getName());
+                binding.clickedTv.setText(ninizs.get(position).getName() + " 클릭!");
+
+                // 생각해보기.. 왜 안 될까!
+//                binding.clickedImg.setImageResource(parent.getItemAtPosition(position).getImg());
+//                binding.clickedTv.setText(parent.getItemAtPosition(position).getName());
             }
         });
     }
