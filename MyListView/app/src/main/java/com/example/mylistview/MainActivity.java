@@ -44,12 +44,8 @@ public class MainActivity extends AppCompatActivity {
         binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                binding.clickedImg.setImageResource(ninizs.get(position).getImg());
-                binding.clickedTv.setText(ninizs.get(position).getName() + " 클릭!");
-
-                // 생각해보기.. 왜 안 될까!
-//                binding.clickedImg.setImageResource(parent.getItemAtPosition(position).getImg());
-//                binding.clickedTv.setText(parent.getItemAtPosition(position).getName());
+                binding.clickedImg.setImageResource(((Niniz)parent.getItemAtPosition(position)).getImg());
+                binding.clickedTv.setText(((Niniz) parent.getItemAtPosition(position)).getName());
             }
         });
     }
