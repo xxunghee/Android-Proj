@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 binding.clickedImg.setImageResource(((Niniz)parent.getItemAtPosition(position)).getImg());
-                binding.clickedTv.setText(((Niniz) parent.getItemAtPosition(position)).getName());
+                binding.clickedTv.setText(((Niniz) parent.getItemAtPosition(position)).getName()+"를(을) 좋아하시는군요 ♬");
             }
         });
     }
