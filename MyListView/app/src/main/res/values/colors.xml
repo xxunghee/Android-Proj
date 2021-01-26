@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="scappy">#FFD36EEC</color>
+    <color name="jordy">#FFFFFFCC</color>
+    <color name="angmond">#FF99CCFF</color>
+    <color name="keroandberony">#FFFEE5EB</color>
+    <color name="cob">#FCFC</color>
+    <color name="pendajr">#F999</color>
+    <color name="bbanya">#FF13AD65</color>
 </resources>
