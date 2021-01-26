@@ -17,7 +17,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_gravity="center">
             <ImageView
                 android:id="@+id/clicked_img"
@@ -29,7 +29,9 @@
                 android:gravity="center_vertical"
                 android:textSize="17dp"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="☞ ♥좋아하는 캐릭터를 선택해보세요♥ ☜"/>
         </LinearLayout>
 
         <View
