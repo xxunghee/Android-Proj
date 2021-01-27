@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.example.mylistview.databinding.ActivityMemberBinding;
 
@@ -23,6 +26,16 @@ public class MemberActivity extends AppCompatActivity {
         binding.img.setImageResource(intent.getExtras().getInt("imgID"));
         binding.name.setText(intent.getExtras().getString("name"));
         binding.comment.setText(intent.getExtras().getString("comment"));
+
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+        binding.img.setAnimation(animation);
+
+        binding.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.img.startAnimation(animation);
+            }
+        });
     }
 
 
