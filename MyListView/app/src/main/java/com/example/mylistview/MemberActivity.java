@@ -1,6 +1,7 @@
 package com.example.mylistview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
@@ -22,7 +23,8 @@ public class MemberActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_member);
 
         Intent intent = getIntent();
-        binding.layout.setBackgroundColor(intent.getIntExtra("color", -1));
+
+        binding.layout.setBackgroundColor(ResourcesCompat.getColor(getResources(),intent.getIntExtra("color", -1),null));
         binding.img.setImageResource(intent.getExtras().getInt("imgID"));
         binding.name.setText(intent.getExtras().getString("name"));
         binding.comment.setText(intent.getExtras().getString("comment"));
