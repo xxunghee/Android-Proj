@@ -29,6 +29,11 @@ public class KakaoSDKAdapter extends KakaoAdapter {
             }
 
             @Override
+            public boolean isSecureMode() {
+                return false;
+            }
+
+            @Override
             public ApprovalType getApprovalType() {
                 return ApprovalType.INDIVIDUAL;
             }
@@ -43,9 +48,10 @@ public class KakaoSDKAdapter extends KakaoAdapter {
     @Override
     public IApplicationConfig getApplicationConfig() {
         return new IApplicationConfig() {
-            @Override
+            //GlobalApplication.getTopActivity() -> null
+            //@Override
             public Activity getTopActivity() {
-                return GlobalApplication.getCurrentActivity();
+                return null;
             }
 
             @Override
