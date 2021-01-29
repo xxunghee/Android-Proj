@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("MainActivity", "Kakao Login Success");
                 LoginActivity.this.startHomeActivity();
             }
-
         }
     });
 
@@ -56,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     LoginClient.getInstance().loginWithKakaoAccount(LoginActivity.this, callback);
                 }
-
             }
         });
     }
