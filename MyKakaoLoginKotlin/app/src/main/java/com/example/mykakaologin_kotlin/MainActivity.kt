@@ -15,18 +15,22 @@ class MainActivity : AppCompatActivity() {
 
         val callback: ((OAuthToken?, Throwable?) -> Unit) = { token, error ->
             if (error != null) { //Login Fail
-                Log.e(TAG, "Kakao Login Failed :", error)
+                Log.e("MainActivity", "Kakao Login Failed :", error)
             } else if (token != null) { //Login Success
-                Log.d(TAG, "Kakao Login Success")
+                Log.d("MainActivity", "Kakao Login Success")
                 startHomeActivity()
             }
         }
+
+        // 로그인 버튼 클릭
         findViewById<ImageView>(R.id.btn_kakao_login).setOnClickListener {
-            // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니라면 카카오계정으로 로그인
             LoginClient.instance.run {
+                // 기기에 카카오톡이 설치되어 있는 경우, 카카오톡으로 로그인
                 if (isKakaoTalkLoginAvailable(this@MainActivity)) {
                     loginWithKakaoTalk(this@MainActivity, callback = callback)
-                } else {
+                }
+                // 기기에 카카오톡이 없는 경우, 카카오 계정으로 로그인
+                else {
                     loginWithKakaoAccount(this@MainActivity, callback = callback)
                 }
             }
@@ -35,9 +39,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun startHomeActivity() {
         startActivity(Intent(this, HomeActivity::class.java))
-    }
-
-    companion object {
-        private const val TAG = "MainActivity"
     }
 }
