@@ -1,6 +1,5 @@
 package com.example.mykakaologin;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
@@ -11,13 +10,8 @@ import com.kakao.auth.ISessionConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
 
-// ### 이 파일 통으로
-/**
- * 이미지를 캐시를 앱 수준에서 관리하기 위한 애플리케이션 객체이다.
- * 로그인 기반 샘플앱에서 사용한다.
- *
- * @author MJ
- */
+
+
 public class GlobalApplication extends Application {
     private static GlobalApplication instance;
 
@@ -80,11 +74,6 @@ public class GlobalApplication extends Application {
         @Override
         public IApplicationConfig getApplicationConfig() {
             return new IApplicationConfig() {
-                //@Override 왜 에러나지
-                public Activity getTopActivity() {
-                    return null;
-                }
-
                 @Override
                 public Context getApplicationContext() {
                     return GlobalApplication.getGlobalApplicationContext();

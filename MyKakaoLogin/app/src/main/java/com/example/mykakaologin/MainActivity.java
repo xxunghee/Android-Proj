@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kakao.auth.AuthType;
+import com.kakao.auth.KakaoSDK;
 import com.kakao.auth.Session;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        KakaoSDK.init(getApplicationContext(), R.string.kakao_app_key);
 
         btn_kakao_login = (Button) findViewById(R.id.btn_kakao_login);
         btn_custom_login_out = (Button) findViewById(R.id.btn_custom_login_out);

@@ -39,5 +39,7 @@ dependencies {
 
     // ### Kakao SDK 모듈 라이브러리
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    // ###
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.50'
 
 }
