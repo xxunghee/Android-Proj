@@ -7,8 +7,13 @@ import android.util.Log
 import android.widget.ImageView
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.user.UserApiClient
 
 class MainActivity : AppCompatActivity() {
+
+    var id:Long = 0
+    var nickname:String? = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,6 +23,9 @@ class MainActivity : AppCompatActivity() {
                 Log.e("MainActivity", "Kakao Login Failed :", error)
             } else if (token != null) { //Login Success
                 Log.d("MainActivity", "Kakao Login Success")
+
+                getUserInfo();
+
                 startHomeActivity()
             }
         }
@@ -39,5 +47,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun startHomeActivity() {
         startActivity(Intent(this, HomeActivity::class.java))
+    }
+
+    private fun getUserInfo() {
+        // 사용자 정보 받아오기
+        UserApiClient.instance.me { user, error ->
+            if(error != null) {
+                Log.e("MainActivity", "사용자 정보 요청 실패", error)
+            }
+            else if(user != null) {
+                id = user.id
+                nickname = user.kakaoAccount?.profile?.nickname
+            }
+        }
+    }
+
+    private fun showInfo(id:Long, name:String?) {
+        Log.d("아이디이름", id.toString() + " / " + name)
     }
 }
